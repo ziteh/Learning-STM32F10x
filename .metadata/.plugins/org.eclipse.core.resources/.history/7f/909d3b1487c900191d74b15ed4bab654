@@ -1,0 +1,28 @@
+
+#include "GPIO_Initialization.h"
+
+void GPIO_setup(int port, int pin, char mod, int speed)
+{
+	// Enable GPIO Peripheral clock
+	RCC_APB2PeriphClockCmd(GPIO_RCC_MASKx(port), ENABLE);
+
+	GPIO_InitTypeDef GPIO_InitStructure;
+
+	// Configure pin in output push/pull mode
+	GPIO_InitStructure.GPIO_Pin = GPIO_PIN_MASK(pin);
+	switch(mod)
+	{
+		case gopp
+	}
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_Init(GPIO_GPIOx(port), &GPIO_InitStructure);
+
+	// Start with led turned off
+	blink_led_off();
+}
+
+
+
+
+

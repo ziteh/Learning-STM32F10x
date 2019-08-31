@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Test-02/src/GPIO_Initialization&apos; to &apos;GPIO_Initialization.c&apos;" description="Rename resource &apos;GPIO_Initialization&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/GPIO_Initialization" name="GPIO_Initialization.c" stamp="1566984367255" updateReferences="true"/>
+</session>
