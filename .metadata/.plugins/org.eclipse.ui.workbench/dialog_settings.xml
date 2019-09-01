@@ -19,8 +19,8 @@
 		</list>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="0"/>
-		<item key="DIALOG_Y_ORIGIN" value="0"/>
+		<item key="DIALOG_X_ORIGIN" value="879"/>
+		<item key="DIALOG_Y_ORIGIN" value="124"/>
 	</section>
 	<section name="org.eclipse.ui.preferences.keysPreferencePage">
 		<item key="actionSetFilter" value="true"/>
@@ -39,6 +39,14 @@
 		<list key="columns">
 			<item value="318"/>
 			<item value="638"/>
+		</list>
+	</section>
+	<section name="PreferencesExportWizard">
+		<item key="" value="C:\Users\wk415\Dropbox\2-暫用資料夾\config-20190901.epf"/>
+		<item key="WizardPreferencesExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID" value="false"/>
+		<item key="WizardPreferencesExportPage1.EXPORT_ALL_PREFERENCES_ID" value="true"/>
+		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\wk415\Dropbox\2-暫用資料夾\config-20190901.epf"/>
 		</list>
 	</section>
 </section>

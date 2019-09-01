@@ -8,7 +8,11 @@ c:/stm32toolchain/gcc-arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-non
 Allocating common symbols
 Common symbol       size              file
 
+TIM_TimeBaseStructure
+                    0xa               ./src/main.o
 errno               0x4               ./system/src/newlib/_syscalls.o
+TIM_OCInitStructure
+                    0x10              ./src/main.o
 systick             0x4               ./src/delay.o
 
 Discarded input sections
@@ -269,8 +273,6 @@ Discarded input sections
                 0x00000000       0xbc ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
  .text.RCC_AHBPeriphClockCmd
                 0x00000000       0x4c ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
- .text.RCC_APB1PeriphClockCmd
-                0x00000000       0x4c ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
  .text.RCC_APB2PeriphResetCmd
                 0x00000000       0x4c ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
  .text.RCC_APB1PeriphResetCmd
@@ -367,12 +369,6 @@ Discarded input sections
                 0x00000000       0x80 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
  .text.TIM_DeInit
                 0x00000000      0x29c ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
- .text.TIM_OC2Init
-                0x00000000      0x18c ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
- .text.TIM_OC3Init
-                0x00000000      0x170 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
- .text.TIM_OC4Init
-                0x00000000      0x110 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
  .text.TIM_BDTRConfig
                 0x00000000       0xf4 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
  .text.TIM_TimeBaseStructInit
@@ -383,6 +379,8 @@ Discarded input sections
                 0x00000000       0x10 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
  .text.TIM_BDTRStructInit
                 0x00000000       0x12 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+ .text.TIM_CtrlPWMOutputs
+                0x00000000       0x6c ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
  .text.TIM_ITConfig
                 0x00000000       0xd4 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
  .text.TIM_GenerateEvent
@@ -425,12 +423,6 @@ Discarded input sections
                 0x00000000       0x88 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
  .text.TIM_CCPreloadControl
                 0x00000000       0x78 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
- .text.TIM_OC2PreloadConfig
-                0x00000000       0x80 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
- .text.TIM_OC3PreloadConfig
-                0x00000000       0x64 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
- .text.TIM_OC4PreloadConfig
-                0x00000000       0x68 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
  .text.TIM_OC1FastConfig
                 0x00000000       0xac ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
  .text.TIM_OC2FastConfig
@@ -687,6 +679,7 @@ Discarded input sections
  .text          0x00000000        0x0 ./system/src/newlib/_exit.o
  .data          0x00000000        0x0 ./system/src/newlib/_exit.o
  .bss           0x00000000        0x0 ./system/src/newlib/_exit.o
+ .text.abort    0x00000000        0x8 ./system/src/newlib/_exit.o
  .debug_macro   0x00000000      0xa96 ./system/src/newlib/_exit.o
  .debug_macro   0x00000000       0x18 ./system/src/newlib/_exit.o
  .debug_macro   0x00000000       0x22 ./system/src/newlib/_exit.o
@@ -966,6 +959,15 @@ Discarded input sections
  .bss           0x00000000        0x0 ./system/src/newlib/assert.o
  .text.__assert_func
                 0x00000000        0x6 ./system/src/newlib/assert.o
+ .text.assert_failed
+                0x00000000        0x6 ./system/src/newlib/assert.o
+ .debug_info    0x00000000      0xa74 ./system/src/newlib/assert.o
+ .debug_abbrev  0x00000000      0x234 ./system/src/newlib/assert.o
+ .debug_loc     0x00000000       0xde ./system/src/newlib/assert.o
+ .debug_aranges
+                0x00000000       0x28 ./system/src/newlib/assert.o
+ .debug_ranges  0x00000000       0x18 ./system/src/newlib/assert.o
+ .debug_macro   0x00000000      0x1ca ./system/src/newlib/assert.o
  .debug_macro   0x00000000      0xa96 ./system/src/newlib/assert.o
  .debug_macro   0x00000000       0x22 ./system/src/newlib/assert.o
  .debug_macro   0x00000000       0x58 ./system/src/newlib/assert.o
@@ -973,6 +975,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x94 ./system/src/newlib/assert.o
  .debug_macro   0x00000000       0x35 ./system/src/newlib/assert.o
  .debug_macro   0x00000000       0x34 ./system/src/newlib/assert.o
+ .debug_macro   0x00000000       0x1c ./system/src/newlib/assert.o
  .debug_macro   0x00000000       0x16 ./system/src/newlib/assert.o
  .debug_macro   0x00000000      0x10e ./system/src/newlib/assert.o
  .debug_macro   0x00000000       0x8d ./system/src/newlib/assert.o
@@ -1000,6 +1003,12 @@ Discarded input sections
  .debug_macro   0x00000000       0x3d ./system/src/newlib/assert.o
  .debug_macro   0x00000000       0x35 ./system/src/newlib/assert.o
  .debug_macro   0x00000000      0x51a ./system/src/newlib/assert.o
+ .debug_line    0x00000000      0x339 ./system/src/newlib/assert.o
+ .debug_str     0x00000000     0x897f ./system/src/newlib/assert.o
+ .comment       0x00000000       0x77 ./system/src/newlib/assert.o
+ .debug_frame   0x00000000       0x40 ./system/src/newlib/assert.o
+ .ARM.attributes
+                0x00000000       0x2d ./system/src/newlib/assert.o
  .group         0x00000000        0xc ./system/src/diag/Trace.o
  .text          0x00000000        0x0 ./system/src/diag/Trace.o
  .data          0x00000000        0x0 ./system/src/diag/Trace.o
@@ -1406,10 +1415,10 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/delay.o
  .data          0x00000000        0x0 ./src/delay.o
  .bss           0x00000000        0x0 ./src/delay.o
+ .text.SysTick_Init
+                0x00000000       0x30 ./src/delay.o
  .text.delay_us
                 0x00000000       0x30 ./src/delay.o
- .text.delay_ms
-                0x00000000       0x38 ./src/delay.o
  .debug_macro   0x00000000      0xa96 ./src/delay.o
  .debug_macro   0x00000000       0x50 ./src/delay.o
  .debug_macro   0x00000000      0x34e ./src/delay.o
@@ -1547,72 +1556,10 @@ Discarded input sections
  .group         0x00000000        0xc ./src/main.o
  .group         0x00000000        0xc ./src/main.o
  .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
- .group         0x00000000        0xc ./src/main.o
  .text          0x00000000        0x0 ./src/main.o
  .data          0x00000000        0x0 ./src/main.o
  .bss           0x00000000        0x0 ./src/main.o
  .debug_macro   0x00000000      0xa96 ./src/main.o
- .debug_macro   0x00000000       0x22 ./src/main.o
- .debug_macro   0x00000000       0x58 ./src/main.o
- .debug_macro   0x00000000       0x18 ./src/main.o
- .debug_macro   0x00000000       0x94 ./src/main.o
- .debug_macro   0x00000000       0x35 ./src/main.o
- .debug_macro   0x00000000       0x34 ./src/main.o
- .debug_macro   0x00000000       0x57 ./src/main.o
- .debug_macro   0x00000000      0x339 ./src/main.o
- .debug_macro   0x00000000       0x16 ./src/main.o
- .debug_macro   0x00000000       0x43 ./src/main.o
- .debug_macro   0x00000000       0x34 ./src/main.o
- .debug_macro   0x00000000       0x10 ./src/main.o
- .debug_macro   0x00000000       0x58 ./src/main.o
- .debug_macro   0x00000000      0x182 ./src/main.o
- .debug_macro   0x00000000       0x10 ./src/main.o
- .debug_macro   0x00000000       0x6a ./src/main.o
- .debug_macro   0x00000000       0x1c ./src/main.o
- .debug_macro   0x00000000       0x52 ./src/main.o
- .debug_macro   0x00000000       0x40 ./src/main.o
- .debug_macro   0x00000000       0x10 ./src/main.o
- .debug_macro   0x00000000       0x40 ./src/main.o
- .debug_macro   0x00000000       0xd5 ./src/main.o
- .debug_macro   0x00000000       0x1c ./src/main.o
- .debug_macro   0x00000000       0x3d ./src/main.o
- .debug_macro   0x00000000       0x16 ./src/main.o
- .debug_macro   0x00000000       0x35 ./src/main.o
- .debug_macro   0x00000000       0x16 ./src/main.o
- .debug_macro   0x00000000       0x29 ./src/main.o
  .debug_macro   0x00000000       0x50 ./src/main.o
  .debug_macro   0x00000000      0x34e ./src/main.o
  .debug_macro   0x00000000       0x35 ./src/main.o
@@ -1716,7 +1663,7 @@ END GROUP
                 0x20004c00                __Main_Stack_Limit = (__stack - __Main_Stack_Size)
                 [!provide]                PROVIDE (_Main_Stack_Limit = __Main_Stack_Limit)
                 0x00000100                _Minimum_Stack_Size = 0x100
-                0x20000034                PROVIDE (_Heap_Begin = _end_noinit)
+                0x20000058                PROVIDE (_Heap_Begin = _end_noinit)
                 0x20004c00                PROVIDE (_Heap_Limit = (__stack - __Main_Stack_Size))
 
 .isr_vector     0x08000000      0x294
@@ -1837,16 +1784,16 @@ END GROUP
 
 .inits          0x08000294       0x28
                 0x08000294                __data_regions_array_start = .
-                0x08000294        0x4 LONG 0x8000e10 LOADADDR (.data)
+                0x08000294        0x4 LONG 0x8001410 LOADADDR (.data)
                 0x08000298        0x4 LONG 0x20000000 ADDR (.data)
-                0x0800029c        0x4 LONG 0x20000024 (ADDR (.data) + SIZEOF (.data))
-                0x080002a0        0x4 LONG 0x8000e10 LOADADDR (.data_CCMRAM)
+                0x0800029c        0x4 LONG 0x2000002c (ADDR (.data) + SIZEOF (.data))
+                0x080002a0        0x4 LONG 0x8001410 LOADADDR (.data_CCMRAM)
                 0x080002a4        0x4 LONG 0x0 ADDR (.data_CCMRAM)
                 0x080002a8        0x4 LONG 0x0 (ADDR (.data_CCMRAM) + SIZEOF (.data_CCMRAM))
                 0x080002ac                __data_regions_array_end = .
                 0x080002ac                __bss_regions_array_start = .
-                0x080002ac        0x4 LONG 0x20000024 ADDR (.bss)
-                0x080002b0        0x4 LONG 0x20000034 (ADDR (.bss) + SIZEOF (.bss))
+                0x080002ac        0x4 LONG 0x2000002c ADDR (.bss)
+                0x080002b0        0x4 LONG 0x20000058 (ADDR (.bss) + SIZEOF (.bss))
                 0x080002b4        0x4 LONG 0x0 ADDR (.bss_CCMRAM)
                 0x080002b8        0x4 LONG 0x0 (ADDR (.bss_CCMRAM) + SIZEOF (.bss_CCMRAM))
                 0x080002bc                __bss_regions_array_end = .
@@ -1872,7 +1819,7 @@ END GROUP
 .flashtext
  *(.flashtext .flashtext.*)
 
-.text           0x080002bc      0xb54
+.text           0x080002bc     0x1154
  *(.text .text.*)
  .text.GPIO_Init
                 0x080002bc      0x134 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
@@ -1880,111 +1827,129 @@ END GROUP
  .text.RCC_APB2PeriphClockCmd
                 0x080003f0       0x4c ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
                 0x080003f0                RCC_APB2PeriphClockCmd
+ .text.RCC_APB1PeriphClockCmd
+                0x0800043c       0x4c ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
+                0x0800043c                RCC_APB1PeriphClockCmd
  .text.TIM_TimeBaseInit
-                0x0800043c      0x160 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
-                0x0800043c                TIM_TimeBaseInit
+                0x08000488      0x160 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x08000488                TIM_TimeBaseInit
  .text.TIM_OC1Init
-                0x0800059c      0x1b4 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
-                0x0800059c                TIM_OC1Init
- .text.TIM_Cmd  0x08000750       0xc8 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
-                0x08000750                TIM_Cmd
- .text.TIM_CtrlPWMOutputs
-                0x08000818       0x6c ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
-                0x08000818                TIM_CtrlPWMOutputs
+                0x080005e8      0x1b4 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x080005e8                TIM_OC1Init
+ .text.TIM_OC2Init
+                0x0800079c      0x18c ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x0800079c                TIM_OC2Init
+ .text.TIM_OC3Init
+                0x08000928      0x170 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x08000928                TIM_OC3Init
+ .text.TIM_OC4Init
+                0x08000a98      0x110 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x08000a98                TIM_OC4Init
+ .text.TIM_Cmd  0x08000ba8       0xc8 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x08000ba8                TIM_Cmd
  .text.TIM_ARRPreloadConfig
-                0x08000884       0xc8 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
-                0x08000884                TIM_ARRPreloadConfig
+                0x08000c70       0xc8 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x08000c70                TIM_ARRPreloadConfig
  .text.TIM_OC1PreloadConfig
-                0x0800094c       0xac ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
-                0x0800094c                TIM_OC1PreloadConfig
+                0x08000d38       0xac ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x08000d38                TIM_OC1PreloadConfig
+ .text.TIM_OC2PreloadConfig
+                0x08000de4       0x80 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x08000de4                TIM_OC2PreloadConfig
+ .text.TIM_OC3PreloadConfig
+                0x08000e64       0x64 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x08000e64                TIM_OC3PreloadConfig
+ .text.TIM_OC4PreloadConfig
+                0x08000ec8       0x68 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x08000ec8                TIM_OC4PreloadConfig
  .text.TIM_SetCompare1
-                0x080009f8       0x90 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
-                0x080009f8                TIM_SetCompare1
- .text._exit    0x08000a88        0x2 ./system/src/newlib/_exit.o
-                0x08000a88                _exit
- .text.abort    0x08000a8a        0x8 ./system/src/newlib/_exit.o
-                0x08000a8a                abort
- *fill*         0x08000a92        0x2 
+                0x08000f30       0x90 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x08000f30                TIM_SetCompare1
+ .text._exit    0x08000fc0        0x2 ./system/src/newlib/_exit.o
+                0x08000fc0                _exit
+ *fill*         0x08000fc2        0x2 
  .text.__initialize_args
-                0x08000a94       0x10 ./system/src/newlib/_syscalls.o
-                0x08000a94                __initialize_args
- .text.assert_failed
-                0x08000aa4        0x6 ./system/src/newlib/assert.o
-                0x08000aa4                assert_failed
- *fill*         0x08000aaa        0x2 
+                0x08000fc4       0x10 ./system/src/newlib/_syscalls.o
+                0x08000fc4                __initialize_args
  .text.__initialize_hardware_early
-                0x08000aac       0x18 ./system/src/cortexm/_initialize_hardware.o
-                0x08000aac                __initialize_hardware_early
+                0x08000fd4       0x18 ./system/src/cortexm/_initialize_hardware.o
+                0x08000fd4                __initialize_hardware_early
  .text.__initialize_hardware
-                0x08000ac4        0x8 ./system/src/cortexm/_initialize_hardware.o
-                0x08000ac4                __initialize_hardware
+                0x08000fec        0x8 ./system/src/cortexm/_initialize_hardware.o
+                0x08000fec                __initialize_hardware
  .text.SetSysClockTo72
-                0x08000acc       0xc4 ./system/src/cmsis/system_stm32f10x.o
+                0x08000ff4       0xc4 ./system/src/cmsis/system_stm32f10x.o
  .text.SetSysClock
-                0x08000b90        0x8 ./system/src/cmsis/system_stm32f10x.o
+                0x080010b8        0x8 ./system/src/cmsis/system_stm32f10x.o
  .text.SystemInit
-                0x08000b98       0x50 ./system/src/cmsis/system_stm32f10x.o
-                0x08000b98                SystemInit
+                0x080010c0       0x50 ./system/src/cmsis/system_stm32f10x.o
+                0x080010c0                SystemInit
  .text.SystemCoreClockUpdate
-                0x08000be8       0x94 ./system/src/cmsis/system_stm32f10x.o
-                0x08000be8                SystemCoreClockUpdate
- .text.SysTick_Init
-                0x08000c7c       0x30 ./src/delay.o
-                0x08000c7c                SysTick_Init
+                0x08001110       0x94 ./system/src/cmsis/system_stm32f10x.o
+                0x08001110                SystemCoreClockUpdate
+ .text.delay_ms
+                0x080011a4       0x38 ./src/delay.o
+                0x080011a4                delay_ms
  .text.SysTick_Handler
-                0x08000cac       0x14 ./src/delay.o
-                0x08000cac                SysTick_Handler
- .text.TIM1_PWM_Init
-                0x08000cc0       0x9c ./src/main.o
-                0x08000cc0                TIM1_PWM_Init
- .text.main     0x08000d5c       0x20 ./src/main.o
-                0x08000d5c                main
+                0x080011dc       0x14 ./src/delay.o
+                0x080011dc                SysTick_Handler
+ .text.RCC_Configuration
+                0x080011f0       0x14 ./src/main.o
+                0x080011f0                RCC_Configuration
+ .text.GPIO_Configuration
+                0x08001204       0x38 ./src/main.o
+                0x08001204                GPIO_Configuration
+ .text.main     0x0800123c      0x108 ./src/main.o
+                0x0800123c                main
+ .text.assert_failed
+                0x08001344       0x38 ./src/main.o
+                0x08001344                assert_failed
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.GPIO_DeInit.str1.4
-                0x08000d7c       0x31 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
- *fill*         0x08000dad        0x3 
+                0x0800137c       0x31 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
+ *fill*         0x080013ad        0x3 
  .rodata.RCC_HSEConfig.str1.4
-                0x08000db0       0x30 ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
+                0x080013b0       0x30 ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
  .rodata.TIM_DeInit.str1.4
-                0x08000de0       0x30 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+                0x080013e0       0x30 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
  *(vtable)
  *(.eh_frame*)
  *(.glue_7)
- .glue_7        0x08000e10        0x0 linker stubs
+ .glue_7        0x08001410        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08000e10        0x0 linker stubs
+ .glue_7t       0x08001410        0x0 linker stubs
 
-.vfp11_veneer   0x08000e10        0x0
- .vfp11_veneer  0x08000e10        0x0 linker stubs
+.vfp11_veneer   0x08001410        0x0
+ .vfp11_veneer  0x08001410        0x0 linker stubs
 
-.v4_bx          0x08000e10        0x0
- .v4_bx         0x08000e10        0x0 linker stubs
+.v4_bx          0x08001410        0x0
+ .v4_bx         0x08001410        0x0 linker stubs
 
-.iplt           0x08000e10        0x0
- .iplt          0x08000e10        0x0 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
+.iplt           0x08001410        0x0
+ .iplt          0x08001410        0x0 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
 
-.rel.dyn        0x08000e10        0x0
- .rel.iplt      0x08000e10        0x0 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
+.rel.dyn        0x08001410        0x0
+ .rel.iplt      0x08001410        0x0 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08000e10                . = ALIGN (0x4)
-                0x08000e10                __exidx_start = .
+                0x08001410                . = ALIGN (0x4)
+                0x08001410                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08000e10                __exidx_end = .
-                0x08000e10                . = ALIGN (0x4)
-                0x08000e10                _etext = .
-                0x08000e10                __etext = .
+                0x08001410                __exidx_end = .
+                0x08001410                . = ALIGN (0x4)
+                0x08001410                _etext = .
+                0x08001410                __etext = .
 
-.data_CCMRAM    0x00000000        0x0 load address 0x08000e10
+.data_CCMRAM    0x00000000        0x0 load address 0x08001410
  FILL mask 0xff
  *(.data.CCMRAM .data.CCMRAM.*)
                 0x00000000                . = ALIGN (0x4)
-                0x08000e10                _sidata = LOADADDR (.data)
+                0x08001410                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x24 load address 0x08000e10
+.data           0x20000000       0x2c load address 0x08001410
  FILL mask 0xff
                 0x20000000                _sdata = .
                 0x20000000                __data_start__ = .
@@ -1999,52 +1964,70 @@ END GROUP
  .data.SystemCoreClock
                 0x2000001c        0x4 ./system/src/cmsis/system_stm32f10x.o
                 0x2000001c                SystemCoreClock
+ .data.CCR1_Val
+                0x20000020        0x2 ./src/main.o
+                0x20000020                CCR1_Val
+ .data.CCR2_Val
+                0x20000022        0x2 ./src/main.o
+                0x20000022                CCR2_Val
+ .data.CCR3_Val
+                0x20000024        0x2 ./src/main.o
+                0x20000024                CCR3_Val
+ .data.CCR4_Val
+                0x20000026        0x2 ./src/main.o
+                0x20000026                CCR4_Val
  *(.data_end .data_end.*)
- .data_end      0x20000020        0x4 ./system/src/newlib/_startup.o
-                0x20000024                . = ALIGN (0x4)
-                0x20000024                _edata = .
-                0x20000024                __data_end__ = .
+ .data_end      0x20000028        0x4 ./system/src/newlib/_startup.o
+                0x2000002c                . = ALIGN (0x4)
+                0x2000002c                _edata = .
+                0x2000002c                __data_end__ = .
 
-.igot.plt       0x20000024        0x0 load address 0x08000e34
- .igot.plt      0x20000024        0x0 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
+.igot.plt       0x2000002c        0x0 load address 0x0800143c
+ .igot.plt      0x2000002c        0x0 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
 
 .bss_CCMRAM     0x00000000        0x0
  *(.bss.CCMRAM .bss.CCMRAM.*)
 
-.bss            0x20000024       0x10
-                0x20000024                __bss_start__ = .
-                0x20000024                _sbss = .
+.bss            0x2000002c       0x2c
+                0x2000002c                __bss_start__ = .
+                0x2000002c                _sbss = .
  *(.bss_begin .bss_begin.*)
- .bss_begin     0x20000024        0x4 ./system/src/newlib/_startup.o
+ .bss_begin     0x2000002c        0x4 ./system/src/newlib/_startup.o
  *(.bss .bss.*)
  .bss.name.4374
-                0x20000028        0x1 ./system/src/newlib/_syscalls.o
+                0x20000030        0x1 ./system/src/newlib/_syscalls.o
+ *fill*         0x20000031        0x1 
+ .bss.PrescalerValue
+                0x20000032        0x2 ./src/main.o
+                0x20000032                PrescalerValue
  *(COMMON)
- *fill*         0x20000029        0x3 
- COMMON         0x2000002c        0x4 ./src/delay.o
-                0x2000002c                systick
+ COMMON         0x20000034        0x4 ./src/delay.o
+                0x20000034                systick
+ COMMON         0x20000038       0x1c ./src/main.o
+                0x20000038                TIM_TimeBaseStructure
+                0x20000044                TIM_OCInitStructure
  *(.bss_end .bss_end.*)
- .bss_end       0x20000030        0x4 ./system/src/newlib/_startup.o
-                0x20000034                . = ALIGN (0x4)
-                0x20000034                __bss_end__ = .
-                0x20000034                _ebss = .
+ .bss_end       0x20000054        0x4 ./system/src/newlib/_startup.o
+                0x20000058                . = ALIGN (0x4)
+                0x20000058                __bss_end__ = .
+                0x20000058                _ebss = .
 
 .noinit_CCMRAM
  *(.noinit.CCMRAM .noinit.CCMRAM.*)
 
-.noinit         0x20000034        0x0
-                0x20000034                _noinit = .
+.noinit         0x20000058        0x0
+                0x20000058                _noinit = .
  *(.noinit .noinit.*)
-                0x20000034                . = ALIGN (0x4)
-                0x20000034                _end_noinit = .
+                0x20000058                . = ALIGN (0x4)
+                0x20000058                _end_noinit = .
                 [!provide]                PROVIDE (end = _end_noinit)
                 [!provide]                PROVIDE (_end = _end_noinit)
                 [!provide]                PROVIDE (__end = _end_noinit)
                 [!provide]                PROVIDE (__end__ = _end_noinit)
 
-._check_stack   0x20000034      0x100
-                0x20000134                . = (. + _Minimum_Stack_Size)
- *fill*         0x20000034      0x100 
+._check_stack   0x20000058      0x100
+                0x20000158                . = (. + _Minimum_Stack_Size)
+ *fill*         0x20000058      0x100 
 
 .b1text
  *(.b1text)
@@ -2098,7 +2081,6 @@ END GROUP
  .comment       0x00000076       0x77 ./system/src/newlib/_exit.o
  .comment       0x00000076       0x77 ./system/src/newlib/_startup.o
  .comment       0x00000076       0x77 ./system/src/newlib/_syscalls.o
- .comment       0x00000076       0x77 ./system/src/newlib/assert.o
  .comment       0x00000076       0x77 ./system/src/cortexm/_initialize_hardware.o
  .comment       0x00000076       0x77 ./system/src/cortexm/exception_handlers.o
  .comment       0x00000076       0x77 ./system/src/cmsis/system_stm32f10x.o
@@ -2121,19 +2103,17 @@ END GROUP
  .ARM.attributes
                 0x000000e1       0x2d ./system/src/newlib/_syscalls.o
  .ARM.attributes
-                0x0000010e       0x2d ./system/src/newlib/assert.o
+                0x0000010e       0x2d ./system/src/cortexm/_initialize_hardware.o
  .ARM.attributes
-                0x0000013b       0x2d ./system/src/cortexm/_initialize_hardware.o
+                0x0000013b       0x2d ./system/src/cortexm/exception_handlers.o
  .ARM.attributes
-                0x00000168       0x2d ./system/src/cortexm/exception_handlers.o
+                0x00000168       0x2d ./system/src/cmsis/system_stm32f10x.o
  .ARM.attributes
-                0x00000195       0x2d ./system/src/cmsis/system_stm32f10x.o
+                0x00000195       0x2d ./system/src/cmsis/vectors_stm32f10x.o
  .ARM.attributes
-                0x000001c2       0x2d ./system/src/cmsis/vectors_stm32f10x.o
+                0x000001c2       0x2d ./src/delay.o
  .ARM.attributes
-                0x000001ef       0x2d ./src/delay.o
- .ARM.attributes
-                0x0000021c       0x2d ./src/main.o
+                0x000001ef       0x2d ./src/main.o
 
 .debug
  *(.debug)
@@ -2147,7 +2127,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x6d0
+.debug_aranges  0x00000000      0x6b8
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0xa8 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
@@ -2162,24 +2142,22 @@ END GROUP
  .debug_aranges
                 0x00000518       0x30 ./system/src/newlib/_syscalls.o
  .debug_aranges
-                0x00000548       0x28 ./system/src/newlib/assert.o
+                0x00000548       0x28 ./system/src/cortexm/_initialize_hardware.o
  .debug_aranges
-                0x00000570       0x28 ./system/src/cortexm/_initialize_hardware.o
+                0x00000570       0x80 ./system/src/cortexm/exception_handlers.o
  .debug_aranges
-                0x00000598       0x80 ./system/src/cortexm/exception_handlers.o
+                0x000005f0       0x38 ./system/src/cmsis/system_stm32f10x.o
  .debug_aranges
-                0x00000618       0x38 ./system/src/cmsis/system_stm32f10x.o
+                0x00000628       0x20 ./system/src/cmsis/vectors_stm32f10x.o
  .debug_aranges
-                0x00000650       0x20 ./system/src/cmsis/vectors_stm32f10x.o
+                0x00000648       0x38 ./src/delay.o
  .debug_aranges
-                0x00000670       0x38 ./src/delay.o
- .debug_aranges
-                0x000006a8       0x28 ./src/main.o
+                0x00000680       0x38 ./src/main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0xa36f
+.debug_info     0x00000000     0x91c1
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0xce4 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
  .debug_info    0x00000ce4      0xdbb ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
@@ -2187,15 +2165,14 @@ END GROUP
  .debug_info    0x00005966      0x9dc ./system/src/newlib/_exit.o
  .debug_info    0x00006342      0x4ce ./system/src/newlib/_startup.o
  .debug_info    0x00006810      0xab9 ./system/src/newlib/_syscalls.o
- .debug_info    0x000072c9      0xa74 ./system/src/newlib/assert.o
- .debug_info    0x00007d3d      0x2d6 ./system/src/cortexm/_initialize_hardware.o
- .debug_info    0x00008013      0xb90 ./system/src/cortexm/exception_handlers.o
- .debug_info    0x00008ba3      0x4e0 ./system/src/cmsis/system_stm32f10x.o
- .debug_info    0x00009083       0xce ./system/src/cmsis/vectors_stm32f10x.o
- .debug_info    0x00009151      0x193 ./src/delay.o
- .debug_info    0x000092e4     0x108b ./src/main.o
+ .debug_info    0x000072c9      0x2d6 ./system/src/cortexm/_initialize_hardware.o
+ .debug_info    0x0000759f      0xb90 ./system/src/cortexm/exception_handlers.o
+ .debug_info    0x0000812f      0x4e0 ./system/src/cmsis/system_stm32f10x.o
+ .debug_info    0x0000860f       0xce ./system/src/cmsis/vectors_stm32f10x.o
+ .debug_info    0x000086dd      0x193 ./src/delay.o
+ .debug_info    0x00008870      0x951 ./src/main.o
 
-.debug_abbrev   0x00000000     0x1929
+.debug_abbrev   0x00000000     0x15e4
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x24b ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
  .debug_abbrev  0x0000024b      0x240 ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
@@ -2203,15 +2180,14 @@ END GROUP
  .debug_abbrev  0x000006b1      0x226 ./system/src/newlib/_exit.o
  .debug_abbrev  0x000008d7      0x1d7 ./system/src/newlib/_startup.o
  .debug_abbrev  0x00000aae      0x26d ./system/src/newlib/_syscalls.o
- .debug_abbrev  0x00000d1b      0x234 ./system/src/newlib/assert.o
- .debug_abbrev  0x00000f4f       0xfc ./system/src/cortexm/_initialize_hardware.o
- .debug_abbrev  0x0000104b      0x26e ./system/src/cortexm/exception_handlers.o
- .debug_abbrev  0x000012b9      0x19d ./system/src/cmsis/system_stm32f10x.o
- .debug_abbrev  0x00001456       0xa5 ./system/src/cmsis/vectors_stm32f10x.o
- .debug_abbrev  0x000014fb      0x12d ./src/delay.o
- .debug_abbrev  0x00001628      0x301 ./src/main.o
+ .debug_abbrev  0x00000d1b       0xfc ./system/src/cortexm/_initialize_hardware.o
+ .debug_abbrev  0x00000e17      0x26e ./system/src/cortexm/exception_handlers.o
+ .debug_abbrev  0x00001085      0x19d ./system/src/cmsis/system_stm32f10x.o
+ .debug_abbrev  0x00001222       0xa5 ./system/src/cmsis/vectors_stm32f10x.o
+ .debug_abbrev  0x000012c7      0x12d ./src/delay.o
+ .debug_abbrev  0x000013f4      0x1f0 ./src/main.o
 
-.debug_line     0x00000000     0x7d6e
+.debug_line     0x00000000     0x78e9
  *(.debug_line)
  .debug_line    0x00000000      0xccd ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
  .debug_line    0x00000ccd      0xda9 ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
@@ -2219,15 +2195,14 @@ END GROUP
  .debug_line    0x000053b2      0x2fd ./system/src/newlib/_exit.o
  .debug_line    0x000056af      0x4fa ./system/src/newlib/_startup.o
  .debug_line    0x00005ba9      0x3d6 ./system/src/newlib/_syscalls.o
- .debug_line    0x00005f7f      0x339 ./system/src/newlib/assert.o
- .debug_line    0x000062b8      0x369 ./system/src/cortexm/_initialize_hardware.o
- .debug_line    0x00006621      0x702 ./system/src/cortexm/exception_handlers.o
- .debug_line    0x00006d23      0x575 ./system/src/cmsis/system_stm32f10x.o
- .debug_line    0x00007298       0xf4 ./system/src/cmsis/vectors_stm32f10x.o
- .debug_line    0x0000738c      0x3fc ./src/delay.o
- .debug_line    0x00007788      0x5e6 ./src/main.o
+ .debug_line    0x00005f7f      0x369 ./system/src/cortexm/_initialize_hardware.o
+ .debug_line    0x000062e8      0x702 ./system/src/cortexm/exception_handlers.o
+ .debug_line    0x000069ea      0x575 ./system/src/cmsis/system_stm32f10x.o
+ .debug_line    0x00006f5f       0xf4 ./system/src/cmsis/vectors_stm32f10x.o
+ .debug_line    0x00007053      0x3fc ./src/delay.o
+ .debug_line    0x0000744f      0x49a ./src/main.o
 
-.debug_frame    0x00000000     0x1284
+.debug_frame    0x00000000     0x127c
  *(.debug_frame)
  .debug_frame   0x00000000      0x1e8 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
  .debug_frame   0x000001e8      0x31c ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
@@ -2235,44 +2210,41 @@ END GROUP
  .debug_frame   0x00000ef0       0x38 ./system/src/newlib/_exit.o
  .debug_frame   0x00000f28       0x7c ./system/src/newlib/_startup.o
  .debug_frame   0x00000fa4       0x50 ./system/src/newlib/_syscalls.o
- .debug_frame   0x00000ff4       0x40 ./system/src/newlib/assert.o
- .debug_frame   0x00001034       0x40 ./system/src/cortexm/_initialize_hardware.o
- .debug_frame   0x00001074       0xe8 ./system/src/cortexm/exception_handlers.o
- .debug_frame   0x0000115c       0x6c ./system/src/cmsis/system_stm32f10x.o
- .debug_frame   0x000011c8       0x20 ./system/src/cmsis/vectors_stm32f10x.o
- .debug_frame   0x000011e8       0x50 ./src/delay.o
- .debug_frame   0x00001238       0x4c ./src/main.o
+ .debug_frame   0x00000ff4       0x40 ./system/src/cortexm/_initialize_hardware.o
+ .debug_frame   0x00001034       0xe8 ./system/src/cortexm/exception_handlers.o
+ .debug_frame   0x0000111c       0x6c ./system/src/cmsis/system_stm32f10x.o
+ .debug_frame   0x00001188       0x20 ./system/src/cmsis/vectors_stm32f10x.o
+ .debug_frame   0x000011a8       0x50 ./src/delay.o
+ .debug_frame   0x000011f8       0x84 ./src/main.o
 
-.debug_str      0x00000000    0x57568
+.debug_str      0x00000000    0x56e24
  *(.debug_str)
- .debug_str     0x00000000    0x4ec5d ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
+ .debug_str     0x00000000    0x4ec77 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
                               0x4ede2 (size before relaxing)
- .debug_str     0x0004ec5d      0xb4a ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
+ .debug_str     0x0004ec77      0xb4a ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
                               0x4f3b1 (size before relaxing)
- .debug_str     0x0004f7a7      0xc45 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
+ .debug_str     0x0004f7c1      0xc45 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
                               0x4f4fd (size before relaxing)
- .debug_str     0x000503ec     0x4f04 ./system/src/newlib/_exit.o
+ .debug_str     0x00050406     0x4f04 ./system/src/newlib/_exit.o
                                0x7e73 (size before relaxing)
- .debug_str     0x000552f0      0x260 ./system/src/newlib/_startup.o
+ .debug_str     0x0005530a      0x260 ./system/src/newlib/_startup.o
                                0x6647 (size before relaxing)
- .debug_str     0x00055550     0x141a ./system/src/newlib/_syscalls.o
+ .debug_str     0x0005556a     0x141a ./system/src/newlib/_syscalls.o
                                0x8218 (size before relaxing)
- .debug_str     0x0005696a       0xd7 ./system/src/newlib/assert.o
-                               0x897f (size before relaxing)
- .debug_str     0x00056a41       0xcb ./system/src/cortexm/_initialize_hardware.o
+ .debug_str     0x00056984       0xcb ./system/src/cortexm/_initialize_hardware.o
                               0x4e8cc (size before relaxing)
- .debug_str     0x00056b0c      0x1db ./system/src/cortexm/exception_handlers.o
+ .debug_str     0x00056a4f      0x1db ./system/src/cortexm/exception_handlers.o
                               0x538db (size before relaxing)
- .debug_str     0x00056ce7       0x96 ./system/src/cmsis/system_stm32f10x.o
+ .debug_str     0x00056c2a       0x96 ./system/src/cmsis/system_stm32f10x.o
                               0x4e966 (size before relaxing)
- .debug_str     0x00056d7d       0x57 ./system/src/cmsis/vectors_stm32f10x.o
+ .debug_str     0x00056cc0       0x57 ./system/src/cmsis/vectors_stm32f10x.o
                                0x390b (size before relaxing)
- .debug_str     0x00056dd4       0x58 ./src/delay.o
+ .debug_str     0x00056d17       0x58 ./src/delay.o
                               0x4e825 (size before relaxing)
- .debug_str     0x00056e2c      0x73c ./src/main.o
-                              0x53301 (size before relaxing)
+ .debug_str     0x00056d6f       0xb5 ./src/main.o
+                              0x4ecd7 (size before relaxing)
 
-.debug_loc      0x00000000     0x48a9
+.debug_loc      0x00000000     0x4835
  *(.debug_loc)
  .debug_loc     0x00000000      0x9f6 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
  .debug_loc     0x000009f6      0xd20 ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
@@ -2280,10 +2252,9 @@ END GROUP
  .debug_loc     0x0000430d       0x15 ./system/src/newlib/_exit.o
  .debug_loc     0x00004322      0x2a6 ./system/src/newlib/_startup.o
  .debug_loc     0x000045c8       0x6f ./system/src/newlib/_syscalls.o
- .debug_loc     0x00004637       0xde ./system/src/newlib/assert.o
- .debug_loc     0x00004715       0xff ./system/src/cmsis/system_stm32f10x.o
- .debug_loc     0x00004814       0x25 ./src/delay.o
- .debug_loc     0x00004839       0x70 ./src/main.o
+ .debug_loc     0x00004637       0xff ./system/src/cmsis/system_stm32f10x.o
+ .debug_loc     0x00004736       0x25 ./src/delay.o
+ .debug_loc     0x0000475b       0xda ./src/main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -2301,22 +2272,21 @@ END GROUP
  *(.debug_varnames)
 OUTPUT(PWM-01.elf elf32-littlearm)
 
-.debug_ranges   0x00000000      0x618
+.debug_ranges   0x00000000      0x610
  .debug_ranges  0x00000000       0x98 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
  .debug_ranges  0x00000098      0x108 ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o
  .debug_ranges  0x000001a0      0x2e0 ./system/src/stm32f1-stdperiph/stm32f10x_tim.o
  .debug_ranges  0x00000480       0x18 ./system/src/newlib/_exit.o
  .debug_ranges  0x00000498       0x48 ./system/src/newlib/_startup.o
  .debug_ranges  0x000004e0       0x20 ./system/src/newlib/_syscalls.o
- .debug_ranges  0x00000500       0x18 ./system/src/newlib/assert.o
- .debug_ranges  0x00000518       0x18 ./system/src/cortexm/_initialize_hardware.o
- .debug_ranges  0x00000530       0x70 ./system/src/cortexm/exception_handlers.o
- .debug_ranges  0x000005a0       0x28 ./system/src/cmsis/system_stm32f10x.o
- .debug_ranges  0x000005c8       0x10 ./system/src/cmsis/vectors_stm32f10x.o
- .debug_ranges  0x000005d8       0x28 ./src/delay.o
- .debug_ranges  0x00000600       0x18 ./src/main.o
+ .debug_ranges  0x00000500       0x18 ./system/src/cortexm/_initialize_hardware.o
+ .debug_ranges  0x00000518       0x70 ./system/src/cortexm/exception_handlers.o
+ .debug_ranges  0x00000588       0x28 ./system/src/cmsis/system_stm32f10x.o
+ .debug_ranges  0x000005b0       0x10 ./system/src/cmsis/vectors_stm32f10x.o
+ .debug_ranges  0x000005c0       0x28 ./src/delay.o
+ .debug_ranges  0x000005e8       0x28 ./src/main.o
 
-.debug_macro    0x00000000     0x35f6
+.debug_macro    0x00000000     0x2f1e
  .debug_macro   0x00000000      0x1b9 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
  .debug_macro   0x000001b9       0x8b ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
  .debug_macro   0x00000244      0x2a6 ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o
@@ -2345,24 +2315,16 @@ OUTPUT(PWM-01.elf elf32-littlearm)
  .debug_macro   0x00002146      0x118 ./system/src/newlib/_syscalls.o
  .debug_macro   0x0000225e      0x189 ./system/src/newlib/_syscalls.o
  .debug_macro   0x000023e7       0x16 ./system/src/newlib/_syscalls.o
- .debug_macro   0x000023fd      0x1ca ./system/src/newlib/assert.o
- .debug_macro   0x000025c7       0x1c ./system/src/newlib/assert.o
- .debug_macro   0x000025e3      0x16b ./system/src/cortexm/_initialize_hardware.o
- .debug_macro   0x0000274e      0x31e ./system/src/cortexm/exception_handlers.o
- .debug_macro   0x00002a6c       0x3b ./system/src/cortexm/exception_handlers.o
- .debug_macro   0x00002aa7       0x22 ./system/src/cortexm/exception_handlers.o
- .debug_macro   0x00002ac9       0x10 ./system/src/cortexm/exception_handlers.o
- .debug_macro   0x00002ad9       0xcf ./system/src/cortexm/exception_handlers.o
- .debug_macro   0x00002ba8       0x20 ./system/src/cortexm/exception_handlers.o
- .debug_macro   0x00002bc8       0xbe ./system/src/cortexm/exception_handlers.o
- .debug_macro   0x00002c86       0x10 ./system/src/cortexm/exception_handlers.o
- .debug_macro   0x00002c96      0x16e ./system/src/cmsis/system_stm32f10x.o
- .debug_macro   0x00002e04       0x34 ./system/src/cmsis/vectors_stm32f10x.o
- .debug_macro   0x00002e38      0x161 ./src/delay.o
- .debug_macro   0x00002f99      0x31e ./src/main.o
- .debug_macro   0x000032b7       0x16 ./src/main.o
- .debug_macro   0x000032cd       0x97 ./src/main.o
- .debug_macro   0x00003364       0xfd ./src/main.o
- .debug_macro   0x00003461       0x10 ./src/main.o
- .debug_macro   0x00003471       0x16 ./src/main.o
- .debug_macro   0x00003487      0x16f ./src/main.o
+ .debug_macro   0x000023fd      0x16b ./system/src/cortexm/_initialize_hardware.o
+ .debug_macro   0x00002568      0x31e ./system/src/cortexm/exception_handlers.o
+ .debug_macro   0x00002886       0x3b ./system/src/cortexm/exception_handlers.o
+ .debug_macro   0x000028c1       0x22 ./system/src/cortexm/exception_handlers.o
+ .debug_macro   0x000028e3       0x10 ./system/src/cortexm/exception_handlers.o
+ .debug_macro   0x000028f3       0xcf ./system/src/cortexm/exception_handlers.o
+ .debug_macro   0x000029c2       0x20 ./system/src/cortexm/exception_handlers.o
+ .debug_macro   0x000029e2       0xbe ./system/src/cortexm/exception_handlers.o
+ .debug_macro   0x00002aa0       0x10 ./system/src/cortexm/exception_handlers.o
+ .debug_macro   0x00002ab0      0x16e ./system/src/cmsis/system_stm32f10x.o
+ .debug_macro   0x00002c1e       0x34 ./system/src/cmsis/vectors_stm32f10x.o
+ .debug_macro   0x00002c52      0x161 ./src/delay.o
+ .debug_macro   0x00002db3      0x16b ./src/main.o

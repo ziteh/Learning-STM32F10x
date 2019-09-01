@@ -10,6 +10,7 @@ doctypeExtrenalSysref=\#61AFEF | null | null | null | null | null
 doctypeName=\#61AFEF | null | null | null | null | null
 eclipse.preferences.version=1
 entityReference=\#C678DD | null | false | null | null | null
+org.eclipse.wst.sse.ui.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 overriddenByCSS=,cdataBorder,cdataText,commentBorder,commentText,declBorder,doctypeExternalId,doctypeExternalPubref,doctypeExtrenalSysref,doctypeName,entityReference,piBorder,piContent,tagAttributeEquals,tagAttributeName,tagAttributeValue,tagBorder,tagName,xmlContent,
 piBorder=\#61AFEF | null | null | null | null | null
 piContent=\#ABB2BF | null | null | null | null | null
@@ -19,3 +20,5 @@ tagAttributeValue=\#98C379 | null | null | null | null | null
 tagBorder=\#E06C75 | null | null | null | null | null
 tagName=\#E06C75 | null | null | null | null | null
 xmlContent=\#ABB2BF | null | null | null | null | null
+xml_content_assist_default_page_sort_order=org.eclipse.wst.xml.ui.proposalCategory.xmlTags\u0000org.eclipse.wst.xml.ui.proposalCategory.xmlTemplates\u0000
+xml_content_assist_own_page_sort_order=org.eclipse.wst.xml.ui.proposalCategory.xmlTemplates\u0000org.eclipse.wst.xml.ui.proposalCategory.xmlTags\u0000
