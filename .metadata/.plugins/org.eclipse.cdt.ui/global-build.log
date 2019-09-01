@@ -2747,3 +2747,457 @@ arm-none-eabi-size --format=berkeley "PWM-01.elf"
    5096	     84	    300	   5480	   1568	PWM-01.elf
 Finished building: PWM-01.siz
  
+14:22:49 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:216:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:216:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5044	     84	    300	   5428	   1534	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+14:42:26 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:217:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:217:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5040	     84	    300	   5424	   1530	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+14:43:04 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:147:8: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+    if (pwmval = 999)
+        ^~~~~~
+../src/main.c:149:8: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+    if (pwmval = 0)
+        ^~~~~~
+../src/main.c: In function 'assert_failed':
+../src/main.c:217:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:217:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5012	     84	    300	   5396	   1514	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+14:43:33 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:149:8: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+    if (pwmval = 0)
+        ^~~~~~
+../src/main.c: In function 'assert_failed':
+../src/main.c:217:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:217:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5036	     84	    300	   5420	   152c	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+14:43:41 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:217:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:217:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5040	     84	    300	   5424	   1530	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+14:45:16 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:217:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:217:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4980	     84	    300	   5364	   14f4	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+14:52:55 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:219:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:219:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4980	     84	    300	   5364	   14f4	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+14:53:13 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4980	     84	    300	   5364	   14f4	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+14:55:26 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:219:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:219:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4984	     84	    300	   5368	   14f8	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+14:56:06 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:219:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:219:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5044	     84	    300	   5428	   1534	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+15:07:32 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:218:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:218:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4892	     84	    300	   5276	   149c	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+15:08:04 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:218:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:218:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4896	     84	    300	   5280	   14a0	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+15:08:23 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:218:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:218:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5048	     84	    300	   5432	   1538	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+15:14:17 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:225:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:225:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4916	     84	    300	   5300	   14b4	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+15:15:33 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:226:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:226:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4928	     84	    300	   5312	   14c0	PWM-01.elf
+Finished building: PWM-01.siz
+ 
+15:15:54 **** Incremental Build of configuration Debug for project PWM-01 ****
+make all 
+Building file: ../src/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'assert_failed':
+../src/main.c:230:29: warning: unused parameter 'file' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                    ~~~~~~~~~^~~~
+../src/main.c:230:44: warning: unused parameter 'line' [-Wunused-parameter]
+ void assert_failed(uint8_t* file, uint32_t line)
+                                   ~~~~~~~~~^~~~
+Finished building: ../src/main.c
+ 
+Building target: PWM-01.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"PWM-01.map" --specs=nano.specs -o "PWM-01.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o ./system/src/stm32f1-stdperiph/stm32f10x_tim.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/_write.o ./src/delay.o ./src/led_init.o ./src/main.o   
+Finished building target: PWM-01.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O ihex "PWM-01.elf"  "PWM-01.hex"
+Finished building: PWM-01.hex
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "PWM-01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4944	     84	    300	   5328	   14d0	PWM-01.elf
+Finished building: PWM-01.siz
+ 

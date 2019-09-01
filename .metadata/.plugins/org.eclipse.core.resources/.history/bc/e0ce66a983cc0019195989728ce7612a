@@ -20,8 +20,6 @@
   */ 
 
 /* Includes ------------------------------------------------------------------*/
-#include <stdio.h>
-#include <stdlib.h>
 #include "stm32f10x.h"
 #include "delay.h"
 
@@ -39,7 +37,7 @@
 /* Private variables ---------------------------------------------------------*/
 TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 TIM_OCInitTypeDef  TIM_OCInitStructure;
-uint16_t CCR1_Val = 333;
+uint16_t CCR1_Val = 500;
 uint16_t CCR2_Val = 249;
 uint16_t CCR3_Val = 166;
 uint16_t CCR4_Val = 83;
@@ -136,38 +134,26 @@ int main(void)
   /* TIM3 enable counter */
   TIM_Cmd(TIM3, ENABLE);
 
-u16 pwmval=900;
-u8 dir=1;
-
+int pwmval=900;
+int dir=1;
   while (1)
   {
-	  delay_ms(100);
 	  if (dir)
-		  pwmval= pwmval + 1;
+		  pwmval++;
 	  else
-		  pwmval= pwmval - 1;
+		  pwmval--;
 
-	  if (pwmval == 999)
+	  if (pwmval >= 999)
 		  dir = 0;
-	  if (pwmval == 0)
+	  if (pwmval <= 0)
 		  dir = 1;
 
 //	  TIM_OCInitStructure.TIM_Pulse = CCR1_Val;
 //	  TIM_OC1Init(TIM3, &TIM_OCInitStructure);
 
-//	  TIM_SetCompare1(TIM3,pwmval);
+	  TIM_SetCompare1(TIM3,pwmval);
 
-	  TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
-	  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
-	  TIM_OCInitStructure.TIM_Pulse = pwmval;
-	  TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
-
-	  TIM_OC1Init(TIM3, &TIM_OCInitStructure);
-	  TIM_OC1PreloadConfig(TIM3, TIM_OCPreload_Enable);
-	  TIM_ARRPreloadConfig(TIM3, ENABLE);
-
-	  /* TIM3 enable counter */
-	  TIM_Cmd(TIM3, ENABLE);
+	  delay_ms(100);
   }
 }
 

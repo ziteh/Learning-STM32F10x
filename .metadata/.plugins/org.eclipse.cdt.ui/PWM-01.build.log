@@ -1,13 +1,13 @@
-14:19:48 **** Incremental Build of configuration Debug for project PWM-01 ****
+15:15:54 **** Incremental Build of configuration Debug for project PWM-01 ****
 make all 
 Building file: ../src/main.c
 Invoking: GNU ARM Cross C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
 ../src/main.c: In function 'assert_failed':
-../src/main.c:215:29: warning: unused parameter 'file' [-Wunused-parameter]
+../src/main.c:230:29: warning: unused parameter 'file' [-Wunused-parameter]
  void assert_failed(uint8_t* file, uint32_t line)
                     ~~~~~~~~~^~~~
-../src/main.c:215:44: warning: unused parameter 'line' [-Wunused-parameter]
+../src/main.c:230:44: warning: unused parameter 'line' [-Wunused-parameter]
  void assert_failed(uint8_t* file, uint32_t line)
                                    ~~~~~~~~~^~~~
 Finished building: ../src/main.c
@@ -24,9 +24,9 @@ Finished building: PWM-01.hex
 Invoking: GNU ARM Cross Print Size
 arm-none-eabi-size --format=berkeley "PWM-01.elf"
    text	   data	    bss	    dec	    hex	filename
-   5096	     84	    300	   5480	   1568	PWM-01.elf
+   4944	     84	    300	   5328	   14d0	PWM-01.elf
 Finished building: PWM-01.siz
  
 
-14:19:52 Build Finished. 0 errors, 2 warnings. (took 3s.732ms)
+15:15:59 Build Finished. 0 errors, 2 warnings. (took 4s.198ms)
 
